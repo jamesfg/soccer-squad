@@ -53,24 +53,42 @@ export class SoccerSquadService {
         notes: "Left or right mid"
       },
       {
-        name: "Davis Barclay",
+        name: "Barclay Davis",
         positions: [PositionsEnum.MIDFIELD],
-        notes: "Right mid"
+        notes: "Right or center mid"
       },
       {
         name: "Kim Boo",
-        positions: [PositionsEnum.MIDFIELD],
+        positions: [PositionsEnum.DEFENSE],
         notes: "Right back"
       },
       {
         name: "Cade Edwards",
-        positions: [PositionsEnum.FORWARD],
-        notes: "Anything offensive"
+        positions: [PositionsEnum.FORWARD, PositionsEnum.MIDFIELD],
+        notes: "My man just wants to play. Put me in coach."
       },
       {
         name: "Gustavo Rodriguez",
         positions: [PositionsEnum.FORWARD, PositionsEnum.MIDFIELD, PositionsEnum.DEFENSE],
         notes: "Prefers left"
+      },
+      {
+        name: "Nathan Estell",
+        positions: [PositionsEnum.MIDFIELD],
+      },
+      {
+        name: "Calley Calcagno",
+        positions: [PositionsEnum.MIDFIELD],
+        notes: "Will help where needed"
+      },
+      {
+        name: "Matthew Rumbel",
+        positions: [PositionsEnum.MIDFIELD, PositionsEnum.FORWARD]
+      },
+      {
+        name: "Rayheem Sheperd",
+        positions: [PositionsEnum.MIDFIELD, PositionsEnum.FORWARD],
+        notes: "Left wing"
       }
     ];
   }

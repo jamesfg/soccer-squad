@@ -37,6 +37,16 @@ export class FieldComponent implements OnInit {
     this.drawField();
   }
 
+  getPlayerPositions(player: Player): string {
+    var playerPostionsString = "";
+    player.positions.forEach((p, index) => {
+      var comma = index === player.positions.length - 1 ? '' : ', '
+      playerPostionsString += `${<string>p}${comma}`
+    });
+
+    return playerPostionsString;
+  }
+
   getSquadCounts(positionEnum: PositionsEnum): number {
     return this.players.filter(p => p.positions.includes(positionEnum)).length;
   }

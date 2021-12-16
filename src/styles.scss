@@ -20,3 +20,11 @@ body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-expansion-panel-header, .mat-expansion-panel-header.mat-expanded {
+  height: 30px;
+}
+
+.mat-expansion-panel-content {
+  height: 40px;
+}

@@ -1,7 +1,4 @@
-<div class="header">
-  <div>Welcome Wolfpack</div>
-  <a href="https://www.instagram.com/cooljj_20/"><img height="63" width="50" src="/soccer-squad/assets/james-pic.jpg"><span>Add James Garcia on Instagram</span></a>
-</div>
+<div class="title">Welcome Wolfpack</div>
 
 <div class="toolbar">
   <mat-form-field appearance="fill">
@@ -24,10 +21,17 @@
 </div>
 <div class="field-players">
   <div class="player-list">
-    <ol>
-      <li *ngFor="let player of getSquad()"><div class="player">{{player.name}}</div></li>
-    </ol>
-    
+    <div class="player" *ngFor="let player of getSquad()">
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{player.name}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="positions-container">Positions: <span class="positions">{{getPlayerPositions(player)}}</span></div>
+        <div class="notes" *ngIf="player.notes">Notes: {{player.notes}}</div>
+      </mat-expansion-panel>
+    </div>
   </div>
   <div id="field"></div>
 </div>
@@ -36,5 +40,9 @@
   <div>Midfield: {{getSquadCounts(postionsEnum.MIDFIELD)}}</div>
   <div>Defense: {{getSquadCounts(postionsEnum.DEFENSE)}}</div>
   <div>Goalkeeper: {{getSquadCounts(postionsEnum.GOALKEEPER)}}</div>
+</div>
+
+<div class="footer">
+  <a href="https://www.instagram.com/cooljj_20/"><img height="63" width="50" src="/soccer-squad/assets/james-pic.jpg"><span>Add James Garcia on Instagram</span></a>
 </div>
 
