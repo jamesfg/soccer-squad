@@ -1,5 +1,30 @@
+.header {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            padding-left: 3px;
+        }
+    }
+}
+
 #field, .player-list {
     margin: auto;
     width: 500px;
     height: 1000px;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

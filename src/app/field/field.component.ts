@@ -4,6 +4,7 @@ import { PositionsEnum } from '../enums/positions.enums';
 import { Formation } from '../models/formation.model';
 import { Player } from '../models/player.model';
 import { Position } from '../models/position.model';
+import { SoccerSquadService } from '../soccer-squad.service';
 
 const WIDTH = 500;
 const HEIGHT = 1000;
@@ -17,34 +18,19 @@ export class FieldComponent implements OnInit {
   selectedPosition = <string>PositionsEnum.FORWARD;
   selectedColor = 'grey';
   unSelectedColor = 'black';
-  players: Player[] = [
-    {
-      name: "James Garcia",
-      positions: [PositionsEnum.MIDFIELD, PositionsEnum.FORWARD, PositionsEnum.DEFENSE]
-    },
+  players: Player[] = [];
 
-    {
-      name: "Maya",
-      positions: [PositionsEnum.GOALKEEPER, PositionsEnum.FORWARD, PositionsEnum.MIDFIELD]
-    }
-  ];
+  positions: Position[] = [];
 
-  positions: Position[] = [
-    {color: this.unSelectedColor, position: PositionsEnum.FORWARD},
-    {color: this.unSelectedColor, position: PositionsEnum.MIDFIELD},
-    {color: this.unSelectedColor, position: PositionsEnum.DEFENSE},
-    {color: this.unSelectedColor, position: PositionsEnum.GOALKEEPER}
-  ];
+  formations: Formation[] = [];
+  selectedFormation = "";
 
-  formations: Formation[] = [
-    {defense: 4, midfield:4, forward: 2, value: '442'},
-    {defense: 4, midfield:3, forward: 3, value: '433'},
-    {defense: 3, midfield:4, forward: 3, value: '343'},
-    {defense: 5, midfield:4, forward: 1, value: '541'},
-  ];
-  selectedFormation = this.formations[0].value;
-
-  constructor() { }
+  constructor(service: SoccerSquadService) { 
+    this.positions = service.getPositions(this.unSelectedColor);
+    this.players = service.getTeam();
+    this.formations = service.getFormations();
+    this.selectedFormation = this.formations[0].value
+  }
 
   ngOnInit(): void {
     this.drawField();

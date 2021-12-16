@@ -1,10 +1,27 @@
-<select (change)="selectPosition()" [(ngModel)]="selectedPosition">
-    <option *ngFor="let position of positions" [value]="position.position">{{position.position}}</option>
-</select>
+<div class="header">
+  <h1>Welcome Wolfpack</h1>
+  <a href="https://www.instagram.com/cooljj_20/"><img height="40" width="40" src="/assets/james-pic"><span>Add James Garcia on Instagram</span></a>
+</div>
 
-<select (change)="selectFormation()" [(ngModel)]="selectedFormation" >
-    <option *ngFor="let formation of formations" [value]="formation.value">{{formation.defense}}-{{formation.midfield}}-{{formation.forward}}</option>
-</select>
+<div class="toolbar">
+  <mat-form-field appearance="fill">
+    <mat-label>Position</mat-label>
+      <mat-select [(ngModel)]="selectedPosition" (ngModelChange)="selectPosition()">
+        <mat-option *ngFor="let position of positions" [value]="position.position">
+          {{position.position}}
+        </mat-option>
+      </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Formation</mat-label>
+      <mat-select [(ngModel)]="selectedFormation" (ngModelChange)="selectFormation()">
+        <mat-option *ngFor="let formation of formations" [value]="formation.value">
+          {{formation.defense}}-{{formation.midfield}}-{{formation.forward}}
+        </mat-option>
+      </mat-select>
+  </mat-form-field>
+</div>
 
 <div id="player-list">
     <div *ngFor="let player of getSquad()">{{player.name}}</div>
