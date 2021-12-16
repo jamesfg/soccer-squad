@@ -89,6 +89,11 @@ export class SoccerSquadService {
         name: "Rayheem Sheperd",
         positions: [PositionsEnum.MIDFIELD, PositionsEnum.FORWARD],
         notes: "Left wing"
+      },
+      {
+        name: "Jorge Silva",
+        positions: [PositionsEnum.MIDFIELD, PositionsEnum.DEFENSE],
+        notes: "Outer Defense"
       }
     ];
   }

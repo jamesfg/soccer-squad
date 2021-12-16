@@ -22,9 +22,15 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mat-expansion-panel-header, .mat-expansion-panel-header.mat-expanded {
+  padding: 0 5px !important;
   height: 30px;
+  font-size: 12px;
 }
 
-.mat-expansion-panel-content {
-  height: 40px;
+.mat-expansion-panel-header-title {
+  margin: 0 !important;
+}
+
+.mat-expansion-panel-body {
+  padding: 0 5px !important;
 }

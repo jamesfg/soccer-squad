@@ -1,7 +1,7 @@
 <div class="title">Welcome Wolfpack</div>
 
 <div class="toolbar">
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="select-position">
     <mat-label>Position</mat-label>
       <mat-select [(ngModel)]="selectedPosition" (ngModelChange)="selectPosition()">
         <mat-option *ngFor="let position of positions" [value]="position.position">
@@ -10,7 +10,7 @@
       </mat-select>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="select-formation">
     <mat-label>Formation</mat-label>
       <mat-select [(ngModel)]="selectedFormation" (ngModelChange)="selectFormation()">
         <mat-option *ngFor="let formation of formations" [value]="formation.value">
@@ -36,6 +36,7 @@
   <div id="field"></div>
 </div>
 <div class="counts">
+  <div>Players: {{players.length}}</div>
   <div>Forward: {{getSquadCounts(postionsEnum.FORWARD)}}</div>
   <div>Midfield: {{getSquadCounts(postionsEnum.MIDFIELD)}}</div>
   <div>Defense: {{getSquadCounts(postionsEnum.DEFENSE)}}</div>
@@ -43,6 +44,6 @@
 </div>
 
 <div class="footer">
-  <a href="https://www.instagram.com/cooljj_20/"><img height="63" width="50" src="/soccer-squad/assets/james-pic.jpg"><span>Add James Garcia on Instagram</span></a>
+  <a href="https://www.instagram.com/cooljj_20/"><img height="63" width="50" src="/soccer-squad/assets/james-pic.jpg"><span>Instagram</span></a>
 </div>
 
