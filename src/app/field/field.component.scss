@@ -11,18 +11,12 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
 
     a {
         display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
         display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
 
@@ -73,7 +67,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-
+    height: 55px;
     .select-position {
         width: calc(50% - 10px);
         padding: 0 5px;

@@ -15,7 +15,8 @@ export class SoccerSquadService {
     return [
       {
         name: "James Garcia",
-        positions: [PositionsEnum.MIDFIELD, PositionsEnum.FORWARD, PositionsEnum.DEFENSE]
+        positions: [PositionsEnum.MIDFIELD, PositionsEnum.FORWARD, PositionsEnum.DEFENSE],
+        notes: "Made this app :)"
       },
   
       {
