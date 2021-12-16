@@ -6,8 +6,8 @@ import { Player } from '../models/player.model';
 import { Position } from '../models/position.model';
 import { SoccerSquadService } from '../soccer-squad.service';
 
-const WIDTH = 500;
-const HEIGHT = 1000;
+const WIDTH = 250;
+const HEIGHT = 500;
 
 @Component({
   selector: 'app-field',
@@ -97,9 +97,9 @@ export class FieldComponent implements OnInit {
   // draw a rectangle - penalty area 1
   holder.append('rect')        // attach a rectangle
       .attr('y', 0)         // position the left of the rectangle
-      .attr('x', 105)          // position the top of the rectangle
-      .attr('width', 290)    
-      .attr('height', 170)    
+      .attr('x', 52.5)          // position the top of the rectangle
+      .attr('width', 145)    
+      .attr('height', 85)    
       .style('stroke-width', 5)    // set the stroke width
       .style('stroke', '#fff')    // set the line colour
       .style('fill', '#2e8f2d');    // set the fill colour 
@@ -107,10 +107,10 @@ export class FieldComponent implements OnInit {
 
   // draw a rectangle - penalty area 2
   holder.append('rect')        // attach a rectangle
-      .attr('y', 830)         // position the left of the rectangle
-      .attr('x', 105)          // position the top of the rectangle
-      .attr('width', 290)    
-      .attr('height', 170)    
+      .attr('y', 415)         // position the left of the rectangle
+      .attr('x', 52.5)          // position the top of the rectangle
+      .attr('width', 145)    
+      .attr('height', 85)    
       .style('stroke-width', 5)    // set the stroke width
       .style('stroke', '#fff')    // set the line colour
       .style('fill', '#2e8f2d');    // set the fill colour 
@@ -118,19 +118,19 @@ export class FieldComponent implements OnInit {
   // draw a rectangle - six yard box 1
   holder.append('rect')        // attach a rectangle
       .attr('y', 0)         // position the left of the rectangle
-      .attr('x', 184)          // position the top of the rectangle
-      .attr('width', 132)    // set the height
-      .attr('height', 60)    // set the width
+      .attr('x', 92)          // position the top of the rectangle
+      .attr('width', 66)    // set the height
+      .attr('height', 30)    // set the width
       .style('stroke-width', 5)    // set the stroke width
       .style('stroke', '#fff')    // set the line colour
       .style('fill', '#2e8f2d');    // set the fill colour 
 
   // draw a rectangle - six yard box 2
   holder.append('rect')        // attach a rectangle
-      .attr('y', 940)         // position the left of the rectangle
-      .attr('x', 184)          // position the top of the rectangle
-      .attr('width', 132)    // set the height
-      .attr('height', 60)    // set the width
+      .attr('y', 470)         // position the left of the rectangle
+      .attr('x', 92)          // position the top of the rectangle
+      .attr('width', 66)    // set the height
+      .attr('height', 30)    // set the width
       .style('stroke-width', 5)    // set the stroke width
       .style('stroke', '#fff')    // set the line colour
       .style('fill', '#2e8f2d');    // set the fill colour 
@@ -138,46 +138,44 @@ export class FieldComponent implements OnInit {
 
   // draw a circle - penalty spot 1
   holder.append('circle')        // attach a circle
-      .attr('cy', 120)           // position the x-centre
-      .attr('cx', 250)           // position the y-centre
+      .attr('cy', 60)           // position the x-centre
+      .attr('cx', 125)           // position the y-centre
       .attr('r', 5)             // set the radius
       .style('fill', '#fff');     // set the fill colour
 
   // draw a circle - penalty spot 2
   holder.append('circle')        // attach a circle
-      .attr('cy', 880)           // position the x-centre
-      .attr('cx', 250)           // position the y-centre
+      .attr('cy', 440)           // position the x-centre
+      .attr('cx', 125)           // position the y-centre
       .attr('r', 5)             // set the radius
       .style('fill', '#fff');     // set the fill colour
 
   // draw a circle - center spot
   holder.append('circle')        // attach a circle
-      .attr('cy', 500)           // position the x-centre
-      .attr('cx', 250)           // position the y-centre
+      .attr('cy', HEIGHT / 2)           // position the x-centre
+      .attr('cx', WIDTH / 2)           // position the y-centre
       .attr('r', 5)             // set the radius
       .style('fill', '#fff');     // set the fill colour
 
 
   // penalty box semi-circle 1
-      
-
   holder.append('path')
     .attr('d', <any>d3.arc()
-    .innerRadius(70)
-  .outerRadius(75)
+    .innerRadius(35)
+  .outerRadius(37.5)
   .startAngle(4.5) 
   .endAngle(1.75))
     .attr('fill', '#fff')
-    .attr('transform', 'translate(250,155)');
+    .attr('transform', 'translate(125,77.5)');
 
   holder.append('path')
     .attr('d', <any>d3.arc()
-    .innerRadius(70)
-    .outerRadius(75)
+    .innerRadius(35)
+    .outerRadius(37.5)
     .startAngle(-1.5)
     .endAngle(1.5) )
     .attr('fill', '#fff')
-    .attr('transform', 'translate(250,835)');
+    .attr('transform', 'translate(125,417.5)');
 
     this.drawForward(holder);
     this.drawMidfield(holder);
@@ -197,7 +195,7 @@ export class FieldComponent implements OnInit {
     for(let i = 0; i<formation.forward; i++) {
       let distance  = WIDTH / formation.forward;
       holder.append('circle')          // attach a circle
-        .attr('cy', 300)             // position the x-centre
+        .attr('cy', 150)             // position the x-centre
         .attr('cx', (distance * i) + (distance / 2))             // position the y-centre
         .attr('r', 20)               // set the radius
         .style('stroke-width', 3)    // set the stroke width
@@ -206,8 +204,8 @@ export class FieldComponent implements OnInit {
 
         holder.append("text")
         .text("F")
-        .attr("x", ((distance * i) + (distance / 2)) - 5)
-        .attr("y", 305)
+        .attr("x", ((distance * i) + (distance / 2)) - 3)
+        .attr("y", 154)
         .attr('fill', 'white');
     }
   }
@@ -223,7 +221,7 @@ export class FieldComponent implements OnInit {
     for(let i = 0; i<formation.midfield; i++) {
       let distance  = WIDTH / formation.midfield;
       holder.append('circle')          // attach a circle
-        .attr('cy', 500)             // position the x-centre
+        .attr('cy', 250)             // position the x-centre
         .attr('cx', (distance * i) + (distance / 2))             // position the y-centre
         .attr('r', 20)               // set the radius
         .style('stroke-width', 3)    // set the stroke width
@@ -232,8 +230,8 @@ export class FieldComponent implements OnInit {
 
         holder.append("text")
         .text("M")
-        .attr("x", ((distance * i) + (distance / 2)) - 7)
-        .attr("y", 505)
+        .attr("x", ((distance * i) + (distance / 2)) - 6)
+        .attr("y", 254)
         .attr('fill', 'white');
     }
   }
@@ -250,7 +248,7 @@ export class FieldComponent implements OnInit {
       let distance  = WIDTH / formation.defense;
       console.log(distance);
       holder.append('circle')          // attach a circle
-        .attr('cy', 750)             // position the x-centre
+        .attr('cy', 375)             // position the x-centre
         .attr('cx', (distance * i) + (distance / 2))             // position the y-centre
         .attr('r', 20)               // set the radius
         .style('stroke-width', 3)    // set the stroke width
@@ -259,8 +257,8 @@ export class FieldComponent implements OnInit {
 
         holder.append("text")
         .text("D")
-        .attr("x", ((distance * i) + (distance / 2)) - 6)
-        .attr("y", 755)
+        .attr("x", ((distance * i) + (distance / 2)) - 4)
+        .attr("y", 380)
         .attr('fill', 'white');
     }
   }
@@ -273,8 +271,8 @@ export class FieldComponent implements OnInit {
     }
 
     holder.append('circle')          // attach a circle
-    .attr('cy', 920)             // position the x-centre
-    .attr('cx', 250)             // position the y-centre
+    .attr('cy', 460)             // position the x-centre
+    .attr('cx', 125)             // position the y-centre
     .attr('r', 20)               // set the radius
     .style('stroke-width', 3)    // set the stroke width
     .style('stroke', 'black')      // set the line colour
@@ -282,8 +280,8 @@ export class FieldComponent implements OnInit {
 
     holder.append("text")
     .text("K")
-    .attr("x", 245)
-    .attr("y", 925)
+    .attr("x", 120)
+    .attr("y", 465)
     .attr('fill', 'white');
   }
 }

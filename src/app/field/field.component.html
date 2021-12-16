@@ -22,8 +22,10 @@
       </mat-select>
   </mat-form-field>
 </div>
-
-<div id="player-list">
-    <div *ngFor="let player of getSquad()">{{player.name}}</div>
+<div class="field-players">
+  <div class="player-list">
+    <div class="player" *ngFor="let player of getSquad()">{{player.name}}</div>
+  </div>
+  <div id="field"></div>
 </div>
-<div id="field"></div>
+
