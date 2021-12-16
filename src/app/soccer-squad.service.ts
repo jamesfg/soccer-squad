@@ -32,6 +32,45 @@ export class SoccerSquadService {
         name: "Omar Gonzales",
         positions: [PositionsEnum.FORWARD, PositionsEnum.MIDFIELD, PositionsEnum.DEFENSE],
         notes: "If defense, on the outside"
+      },
+      {
+        name: "Maya Hoyer",
+        positions: [PositionsEnum.GOALKEEPER, PositionsEnum.DEFENSE]
+      },
+      {
+        name: "Katie",
+        positions: [PositionsEnum.FORWARD, PositionsEnum.MIDFIELD, PositionsEnum.DEFENSE],
+        notes: "Prefer mid or striker"
+      },
+      {
+        name: "Asia Sylvan",
+        positions: [PositionsEnum.MIDFIELD, PositionsEnum.DEFENSE],
+        notes: "Defensive midfield or center back"
+      },
+      {
+        name: "Chandler Franks",
+        positions: [PositionsEnum.MIDFIELD],
+        notes: "Left or right mid"
+      },
+      {
+        name: "Davis Barclay",
+        positions: [PositionsEnum.MIDFIELD],
+        notes: "Right mid"
+      },
+      {
+        name: "Kim Boo",
+        positions: [PositionsEnum.MIDFIELD],
+        notes: "Right back"
+      },
+      {
+        name: "Cade Edwards",
+        positions: [PositionsEnum.FORWARD],
+        notes: "Anything offensive"
+      },
+      {
+        name: "Gustavo Rodriguez",
+        positions: [PositionsEnum.FORWARD, PositionsEnum.MIDFIELD, PositionsEnum.DEFENSE],
+        notes: "Prefers left"
       }
     ];
   }

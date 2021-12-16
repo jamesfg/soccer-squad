@@ -24,6 +24,7 @@ export class FieldComponent implements OnInit {
 
   formations: Formation[] = [];
   selectedFormation = "";
+  postionsEnum = PositionsEnum;
 
   constructor(service: SoccerSquadService) { 
     this.positions = service.getPositions(this.unSelectedColor);
@@ -36,6 +37,9 @@ export class FieldComponent implements OnInit {
     this.drawField();
   }
 
+  getSquadCounts(positionEnum: PositionsEnum): number {
+    return this.players.filter(p => p.positions.includes(positionEnum)).length;
+  }
   getSquad(): Player[] {
     return this.players.filter(p => p.positions.findIndex(positon => <string>positon === this.selectedPosition) > -1);
   }

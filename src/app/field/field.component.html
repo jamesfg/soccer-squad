@@ -1,5 +1,5 @@
 <div class="header">
-  <h1>Welcome Wolfpack</h1>
+  <div>Welcome Wolfpack</div>
   <a href="https://www.instagram.com/cooljj_20/"><img height="63" width="50" src="/soccer-squad/assets/james-pic.jpg"><span>Add James Garcia on Instagram</span></a>
 </div>
 
@@ -24,8 +24,17 @@
 </div>
 <div class="field-players">
   <div class="player-list">
-    <div class="player" *ngFor="let player of getSquad()">{{player.name}}</div>
+    <ol>
+      <li *ngFor="let player of getSquad()"><div class="player">{{player.name}}</div></li>
+    </ol>
+    
   </div>
   <div id="field"></div>
+</div>
+<div class="counts">
+  <div>Forward: {{getSquadCounts(postionsEnum.FORWARD)}}</div>
+  <div>Midfield: {{getSquadCounts(postionsEnum.MIDFIELD)}}</div>
+  <div>Defense: {{getSquadCounts(postionsEnum.DEFENSE)}}</div>
+  <div>Goalkeeper: {{getSquadCounts(postionsEnum.GOALKEEPER)}}</div>
 </div>
 
