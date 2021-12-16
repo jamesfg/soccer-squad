@@ -95,6 +95,11 @@ export class SoccerSquadService {
         name: "Jorge Silva",
         positions: [PositionsEnum.MIDFIELD, PositionsEnum.DEFENSE],
         notes: "Outer Defense"
+      },
+      {
+        name: "Rachel Barnes",
+        positions: [PositionsEnum.MIDFIELD, PositionsEnum.FORWARD],
+        notes: "Will play anywhere but keeper"
       }
     ];
   }
