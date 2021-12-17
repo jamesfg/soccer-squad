@@ -27,7 +27,8 @@ export class SoccerSquadService {
       {
         name: "Em Wells",
         positions: [PositionsEnum.DEFENSE],
-        notes: "Possible move to defensive mid"
+        notes: "Possible move to defensive mid",
+        isFemale: true
       },
       {
         name: "Omar Gonzales",
@@ -36,17 +37,20 @@ export class SoccerSquadService {
       },
       {
         name: "Maya Hoyer",
-        positions: [PositionsEnum.GOALKEEPER, PositionsEnum.DEFENSE]
+        positions: [PositionsEnum.GOALKEEPER, PositionsEnum.DEFENSE],
+        isFemale: true
       },
       {
         name: "Katie",
         positions: [PositionsEnum.FORWARD, PositionsEnum.MIDFIELD, PositionsEnum.DEFENSE],
-        notes: "Prefer mid or striker"
+        notes: "Prefer mid or striker",
+        isFemale: true
       },
       {
         name: "Asia Sylvan",
         positions: [PositionsEnum.MIDFIELD, PositionsEnum.DEFENSE],
-        notes: "Defensive midfield or center back"
+        notes: "Defensive midfield or center back",
+        isFemale: true
       },
       {
         name: "Chandler Franks",
@@ -80,7 +84,8 @@ export class SoccerSquadService {
       {
         name: "Calley Calcagno",
         positions: [PositionsEnum.MIDFIELD],
-        notes: "Will help where needed"
+        notes: "Will help where needed",
+        isFemale: true
       },
       {
         name: "Matthew Rumbel",
@@ -98,8 +103,9 @@ export class SoccerSquadService {
       },
       {
         name: "Rachel Barnes",
-        positions: [PositionsEnum.MIDFIELD, PositionsEnum.FORWARD],
-        notes: "Will play anywhere but keeper"
+        positions: [PositionsEnum.DEFENSE, PositionsEnum.FORWARD],
+        notes: "Will play anywhere but keeper",
+        isFemale: true
       }
     ];
   }

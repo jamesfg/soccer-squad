@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-
+@import '~material-icons/iconfont/material-icons.css';
 @include mat.core();
 
 $my-primary: mat.define-palette(mat.$indigo-palette, 500);
